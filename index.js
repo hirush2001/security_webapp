@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 
-
+//database connection
 mongoose.connect(process.env.MONGODB_URL)
     .then(() => {
         console.log("Connected to the database")
