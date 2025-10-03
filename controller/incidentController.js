@@ -42,3 +42,15 @@ export async function reportIncident(req, res) {
     });
   }
 }
+
+export async function getIncident(req, res) {
+    try {
+        const incident = await Incident.find({}, "location")
+        res.json(incident)
+    } catch (err) {
+        res.json({
+            message: "Failed to get products",
+            error: err
+        })
+    }
+}
